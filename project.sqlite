@@ -1,0 +1,65 @@
+-- This is the first query:
+SELECT *
+FROM orders
+LIMIT 10;
+
+-- Looking the most recent transcation dates
+
+SELECT DISTINCT order_date
+FROM orders 
+ORDER BY order_date DESC;
+
+-- Query the first 20 rows of the special_instructions column
+
+SELECT special_instructions
+FROM orders
+LIMIT 20;
+
+-- Query special_instructions column that is not empty.
+
+SELECT special_instructions
+FROM orders
+wHERE special_instructions IS NOT NULL;
+
+/*
+Query special_instructions column that is not empty and sort
+in alphabetical order.
+*/
+
+SELECT special_instructions
+FROM orders
+wHERE special_instructions IS NOT NULL
+ORDER BY special_instructions ASC;
+
+-- Query special instrctions for sauce
+
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%sauce%';
+
+-- Query special instrctions for door
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%door%';
+
+-- Query special instrctions for box
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%box%';
+
+-- Query special instrctions for door
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%door%';
+
+-- Query special instrctions for door with Order Number
+SELECT id AS '#',
+   special_instructions AS 'Notes'
+FROM orders
+WHERE special_instructions LIKE '%box%';
+
+
+
+
+
+
